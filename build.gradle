@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    //MongoDB Java Driver
+    compile 'org.mongodb:mongodb-driver-legacy:4.2.3'
+    //Hiermit gehen wir sicher, dass Umlaute angezeigt werden
+    compileJava.options.encoding = 'UTF-8'
+}
+
+
+test {
+    useJUnitPlatform()
+}
